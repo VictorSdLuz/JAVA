@@ -359,8 +359,8 @@ public class Operacoes {
  	
 	public static void cadastrarAtendimento() {
 		System.out.println("Você selecionou a opção de cadastrar atendimento: \n");
-		int alunoIndex = 0;
-		int pedagogoIndex = 0;
+		int alunoIndex = -1;
+		int pedagogoIndex = -1;
 		
 		if(AlunosLista.size()<1 && PedagogosLista.size()<1) {
 			System.out.println("Para seguir com o cadastro de atendimento, é necessario ter ao menos um Pedagogo e um aluno cadastrados, volte quando eles estiverem no sistema por favor.\n");
@@ -372,8 +372,6 @@ public class Operacoes {
 		for(Aluno alunoI : AlunosLista) {
 			if(cpfAluno == alunoI.getCpf()) {
 				alunoIndex = AlunosLista.indexOf(alunoI);
-			}else {
-				alunoIndex = -1;
 			}
 		}
 
@@ -385,8 +383,6 @@ public class Operacoes {
 		for(Pedagogo pedagogoI : PedagogosLista) {
 			if(cpfPedagogo == pedagogoI.getCpf()) {
 				pedagogoIndex = PedagogosLista.indexOf(pedagogoI);
-			}else {
-				pedagogoIndex = -1;
 			}
 		}
 		System.out.println("indice pedagogo: "+pedagogoIndex);
